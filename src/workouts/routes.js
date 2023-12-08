@@ -1,26 +1,27 @@
 import * as React from "react";
 import { WorkoutList, WorkoutBuilder, WorkoutDetail } from './screens';
+import { WorkoutProvider } from "./context";
 
 
 export const routes = [
   {
     path: "/workouts",
-    element: <WorkoutList />,
+    element: <WorkoutProvider><WorkoutList /></WorkoutProvider>,
   },
   {
     path: "/workouts/create",
-    element: <WorkoutBuilder />,
+    element: <WorkoutProvider><WorkoutBuilder /></WorkoutProvider>,
   },
   {
     path: "/workouts/:id",
-    element: <WorkoutDetail />,
+    element: <WorkoutProvider><WorkoutDetail /></WorkoutProvider>,
   },
   {
     path: "/workouts/:id/edit",
-    element: <WorkoutBuilder />,
+    element: <WorkoutProvider><WorkoutBuilder /></WorkoutProvider>,
   },
   {
     path: "/workouts/:id/delete",
-    element: <WorkoutBuilder />,
+    element: <WorkoutProvider><WorkoutBuilder /></WorkoutProvider>,
   },
 ];
